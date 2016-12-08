@@ -1,0 +1,310 @@
+{
+  "passes": [{
+    "recordNetwork": true,
+    "recordTrace": true,
+    "gatherers": [
+      "url",
+      "https",
+      "viewport",
+      "theme-color",
+      "manifest",
+      "accessibility",
+      "content-width"
+    ]
+  },
+  {
+    "passName": "offlinePass",
+    "recordNetwork": true,
+    "gatherers": [
+      "service-worker",
+      "offline"
+    ]
+  },
+  {
+    "gatherers": [
+      "http-redirect",
+      "html-without-javascript"
+    ]
+  }, {
+    "recordNetwork": true,
+    "passName": "dbw",
+    "gatherers": [
+      "styles",
+      "dobetterweb/all-event-listeners",
+      "dobetterweb/anchors-with-no-rel-noopener",
+      "dobetterweb/appcache",
+      "dobetterweb/console-time-usage",
+      "dobetterweb/datenow",
+      "dobetterweb/document-write",
+      "dobetterweb/geolocation-on-start",
+      "dobetterweb/tags-blocking-first-paint",
+      "dobetterweb/websql"
+    ]
+  }],
+
+  "audits": [
+    "is-on-https",
+    "redirects-http",
+    "service-worker",
+    "works-offline",
+    "viewport",
+    "manifest-display",
+    "without-javascript",
+    "first-meaningful-paint",
+    "speed-index-metric",
+    "estimated-input-latency",
+    "time-to-interactive",
+    "user-timings",
+    "screenshots",
+    "critical-request-chains",
+    "manifest-exists",
+    "manifest-background-color",
+    "manifest-theme-color",
+    "manifest-icons-min-192",
+    "manifest-icons-min-144",
+    "manifest-name",
+    "manifest-short-name",
+    "manifest-short-name-length",
+    "manifest-start-url",
+    "theme-color-meta",
+    "aria-valid-attr",
+    "aria-allowed-attr",
+    "color-contrast",
+    "image-alt",
+    "label",
+    "tabindex",
+    "content-width",
+    "dobetterweb/external-anchors-use-rel-noopener",
+    "dobetterweb/appcache-manifest",
+    "dobetterweb/geolocation-on-start",
+    "dobetterweb/link-blocking-first-paint",
+    "dobetterweb/no-console-time",
+    "dobetterweb/no-datenow",
+    "dobetterweb/no-document-write",
+    "dobetterweb/no-mutation-events",
+    "dobetterweb/no-old-flexbox",
+    "dobetterweb/no-websql",
+    "dobetterweb/script-blocking-first-paint",
+    "dobetterweb/uses-http2",
+    "dobetterweb/uses-passive-event-listeners"
+  ],
+
+  "aggregations": [{
+    "name": "Best Practices",
+    "description": "General web development best practices",
+    "scored": false,
+    "categorizable": true,
+    "items": [{
+      "name": "Site is progressively enhanced",
+      "description": "Progressive enhancement means that everyone can access the basic content and functionality of a page in any browser, and those without certain browser features may receive a reduced but still functional experience.",
+      "audits": {
+        "without-javascript": {
+          "expectedValue": true,
+          "weight": 1
+        }
+      }
+    }, {
+      "name": "Using modern protocols",
+      "audits": {
+        "is-on-https": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "uses-http2": {
+          "expectedValue": true,
+          "weight": 1,
+          "description": "Resources made by this application should be severed over HTTP/2 for improved performance."
+        }
+      }
+    }, {
+      "name": "Using modern CSS features",
+      "audits": {
+        "no-old-flexbox": {
+          "expectedValue": true,
+          "weight": 1
+        }
+      }
+    }, {
+      "name": "Using modern JavaScript features",
+      "audits": {
+        "uses-passive-event-listeners": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "no-mutation-events": {
+          "expectedValue": true,
+          "weight": 1
+        }
+      }
+    }, {
+      "name": "Avoiding APIs that harm the user experience",
+      "audits": {
+        "no-document-write": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "link-blocking-first-paint": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "script-blocking-first-paint": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "external-anchors-use-rel-noopener": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "geolocation-on-start": {
+          "expectedValue": true,
+          "weight": 1
+        }
+      }
+    }, {
+      "name": "Accessibility",
+      "audits": {
+        "aria-allowed-attr": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "aria-valid-attr": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "color-contrast": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "image-alt": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "label": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "tabindex": {
+          "expectedValue": true,
+          "weight": 1
+        }
+      }
+    }, {
+      "name": "Other",
+      "audits": {
+        "manifest-short-name-length": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "manifest-display": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "tap-targets": {
+          "expectedValue": true,
+          "weight": 0,
+          "comingSoon": true,
+          "description": "Tap targets are appropriately sized for touch",
+          "category": "UX"
+        },
+        "payments-autocomplete": {
+          "expectedValue": true,
+          "weight": 0,
+          "comingSoon": true,
+          "description": "Payment forms marked up with [autocomplete] attributes",
+          "category": "UX"
+        },
+        "login-autocomplete": {
+          "expectedValue": true,
+          "weight": 0,
+          "comingSoon": true,
+          "description": "Login forms marked up with [autocomplete] attributes",
+          "category": "UX"
+        },
+        "input-type": {
+          "expectedValue": true,
+          "weight": 0,
+          "comingSoon": true,
+          "description": "Input fields use appropriate [type] attributes for custom keyboards",
+          "category": "UX"
+        }
+      }
+    }]
+  }, {
+    "name": "Performance Metrics",
+    "description": "These encapsulate your app's performance.",
+    "scored": false,
+    "categorizable": false,
+    "items": [{
+      "name": "Page load performance is fast",
+      "description": "Users notice if sites and apps don't perform well. These top-level metrics capture the most important perceived performance concerns.",
+      "audits": {
+        "first-meaningful-paint": {
+          "expectedValue": 100,
+          "weight": 1
+        },
+        "speed-index-metric": {
+          "expectedValue": 100,
+          "weight": 1
+        },
+        "estimated-input-latency": {
+          "expectedValue": 100,
+          "weight": 1
+        },
+        "time-to-interactive": {
+          "expectedValue": 100,
+          "weight": 1
+        },
+        "scrolling-60fps": {
+          "expectedValue": true,
+          "weight": 0,
+          "comingSoon": true,
+          "description": "Content scrolls at 60fps",
+          "category": "UX"
+        },
+        "touch-150ms": {
+          "expectedValue": true,
+          "weight": 0,
+          "comingSoon": true,
+          "description": "Touch input gets a response in < 150ms",
+          "category": "UX"
+        },
+        "fmp-no-jank": {
+          "expectedValue": true,
+          "weight": 0,
+          "comingSoon": true,
+          "description": "App is interactive without jank after the first meaningful paint",
+          "category": "UX"
+        }
+      }
+    },{
+      "audits": {
+        "critical-request-chains": {
+          "expectedValue": 0,
+          "weight": 1
+        },
+        "user-timings": {
+          "expectedValue": 0,
+          "weight": 1
+        }
+      }
+    }]
+  }, {
+    "name": "Fancier stuff",
+    "description": "A list of newer features that you could be using in your app. These audits do not affect your score and are just suggestions.",
+    "scored": false,
+    "categorizable": true,
+    "items": [{
+      "name": "New JavaScript features",
+      "audits": {
+        "no-datenow": {
+          "expectedValue": false,
+          "weight": 1
+        },
+        "no-console-time": {
+          "expectedValue": false,
+          "weight": 1
+        }
+      }
+    }]
+  }]
+}
