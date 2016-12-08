@@ -191,14 +191,6 @@
     }, {
       "name": "Other",
       "audits": {
-        "manifest-short-name-length": {
-          "expectedValue": true,
-          "weight": 1
-        },
-        "manifest-display": {
-          "expectedValue": true,
-          "weight": 1
-        },
         "tap-targets": {
           "expectedValue": true,
           "weight": 0,
