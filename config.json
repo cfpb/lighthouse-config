@@ -103,7 +103,35 @@
           "weight": 1
         }
       }
-    }, {
+    },{
+      "name": "Accessibility",
+      "audits": {
+        "aria-allowed-attr": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "aria-valid-attr": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "color-contrast": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "image-alt": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "label": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "tabindex": {
+          "expectedValue": true,
+          "weight": 1
+        }
+      }
+    },{
       "name": "Using modern protocols",
       "audits": {
         "is-on-https": {
@@ -156,34 +184,6 @@
           "weight": 1
         },
         "geolocation-on-start": {
-          "expectedValue": true,
-          "weight": 1
-        }
-      }
-    }, {
-      "name": "Accessibility",
-      "audits": {
-        "aria-allowed-attr": {
-          "expectedValue": true,
-          "weight": 1
-        },
-        "aria-valid-attr": {
-          "expectedValue": true,
-          "weight": 1
-        },
-        "color-contrast": {
-          "expectedValue": true,
-          "weight": 1
-        },
-        "image-alt": {
-          "expectedValue": true,
-          "weight": 1
-        },
-        "label": {
-          "expectedValue": true,
-          "weight": 1
-        },
-        "tabindex": {
           "expectedValue": true,
           "weight": 1
         }
