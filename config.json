@@ -167,22 +167,6 @@
     }, {
       "name": "Avoiding APIs that harm the user experience",
       "audits": {
-        "no-document-write": {
-          "expectedValue": true,
-          "weight": 1
-        },
-        "link-blocking-first-paint": {
-          "expectedValue": true,
-          "weight": 1
-        },
-        "script-blocking-first-paint": {
-          "expectedValue": true,
-          "weight": 1
-        },
-        "external-anchors-use-rel-noopener": {
-          "expectedValue": true,
-          "weight": 1
-        },
         "geolocation-on-start": {
           "expectedValue": true,
           "weight": 1
@@ -196,20 +180,6 @@
           "weight": 0,
           "comingSoon": true,
           "description": "Tap targets are appropriately sized for touch",
-          "category": "UX"
-        },
-        "payments-autocomplete": {
-          "expectedValue": true,
-          "weight": 0,
-          "comingSoon": true,
-          "description": "Payment forms marked up with [autocomplete] attributes",
-          "category": "UX"
-        },
-        "login-autocomplete": {
-          "expectedValue": true,
-          "weight": 0,
-          "comingSoon": true,
-          "description": "Login forms marked up with [autocomplete] attributes",
           "category": "UX"
         },
         "input-type": {
@@ -270,6 +240,22 @@
       }
     },{
       "audits": {
+        "no-document-write": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "link-blocking-first-paint": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "script-blocking-first-paint": {
+          "expectedValue": true,
+          "weight": 1
+        },
+        "external-anchors-use-rel-noopener": {
+          "expectedValue": true,
+          "weight": 1
+        },
         "critical-request-chains": {
           "expectedValue": 0,
           "weight": 1
